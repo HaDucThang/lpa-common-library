@@ -100,11 +100,11 @@
         </repository>
     </distributionManagement>
 
-    <repositories>
-        <repository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/HaDucThang/common-library</url>
-        </repository>
-    </repositories>
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>github</id>-->
+<!--            <url>https://maven.pkg.github.com/HaDucThang/common-library</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
 
 </project>
