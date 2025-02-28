@@ -20,14 +20,16 @@ public class ValidationException extends RuntimeException {
     String errorMessage;
 
     public ValidationException(HttpStatus httpStatus, String errorCode, String errorMessage) {
+        super(errorMessage);
         this.httpStatus = httpStatus;
         this.errorCode = errorCode;
         this.errorMessage = errorMessage;
     }
 
     public ValidationException(IResponseStatus responseStatus, String ... params) {
+        super(String.format(responseStatus.getMessage(), params));
         this.httpStatus = HttpStatus.BAD_REQUEST;
         this.errorCode = responseStatus.getCode();
-        this.errorMessage = String.format(responseStatus.getMessage(), (Object) params);
+        this.errorMessage = String.format(responseStatus.getMessage(), params);;
     }
 }
