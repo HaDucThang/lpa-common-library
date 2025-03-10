@@ -38,7 +38,6 @@ public class ExceptionHandlerController {
             if (ex.getBindingResult().hasFieldErrors()) {
                 FieldError fieldError = ex.getBindingResult().getFieldError();
                 String message = String.format(CommonResponseStatusEnum.FIELD_INVALID.getMessage(), LpaStringUtil.toSnakeCase(fieldError.getField()));
-                log.error(message);
                 return responseFactory.error(HttpStatus.BAD_REQUEST, CommonResponseStatusEnum.FIELD_INVALID.getCode(), message);
             }
         } catch (Exception exception) {

@@ -2,22 +2,25 @@ package com.lpa.common.dto.response;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import java.io.Serializable;
+import java.math.BigDecimal;
+import java.sql.Timestamp;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 @Getter
 @Setter
-@NoArgsConstructor
+@Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class SimpleResponse<T> implements Serializable {
-    T id;
-
-    public SimpleResponse(T id) {
-        this.id = id;
-    }
+public class WalletResponse {
+    Integer id;
+    Integer userId;
+    String currency;
+    BigDecimal balance;
+    Integer status;
+    Timestamp createdTimestamp;
+    Timestamp lastUpdatedTimestamp;
 }

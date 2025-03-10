@@ -30,10 +30,10 @@ public class ApplicationException extends RuntimeException {
         this.errorMessage = responseStatus.getMessage();
     }
 
-    public ApplicationException(HttpStatus httpStatus, ApiResponse<?> apiResponse) {
-        super(apiResponse.getMessage());
+    public ApplicationException(HttpStatus httpStatus, IResponseStatus responseStatus) {
+        super(responseStatus.getMessage());
         this.httpStatus = httpStatus;
-        this.errorCode = apiResponse.getCode();
-        this.errorMessage = apiResponse.getMessage();
+        this.errorCode = responseStatus.getCode();
+        this.errorMessage = responseStatus.getMessage();
     }
 }

@@ -10,6 +10,7 @@ import lombok.ToString;
 public enum CommonResponseStatusEnum implements IResponseStatus {
     SUCCESS("success", "Success"),
     GENERAL_ERROR("general_error", "Any error occur"),
+    TIMEOUT_ERROR("general_error", "Meet timeout error when calling other api"),
     NOT_FOUND_ERROR("invalid_request", "The [%s] is not found"),
     EXIST_ERROR("invalid_request", "The [%s] already exists"),
     FIELD_INVALID("invalid_request", "Field [%s] is invalid"),
